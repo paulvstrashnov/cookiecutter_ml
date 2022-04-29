@@ -1,11 +1,8 @@
-# Cookiecutter Data Science
+# Cookiecutter ML
 
 _A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
 
-
-#### [Project homepage](https://github.com/IngerMathilde/cookiecutter-data-science-dev)
-
-#### [Source homepage](http://drivendata.github.io/cookiecutter-data-science/)
+Insipred by [cookiecutter-data-science-poetry-makefile](https://github.com/IngerMathilde/cookiecutter-data-science-poetry-makefile) and [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/)
 
 
 ### Requirements to use the cookiecutter template:
@@ -20,16 +17,14 @@ $ pip install cookiecutter
 or
 
 ``` bash
-$ conda config --add channels conda-forge
-$ conda install cookiecutter
+$ conda install -c conda-forge cookiecutter
 ```
 
 
 ### To start a new project, run:
 ------------
 
-    cookiecutter https://github.com/IngerMathilde/cookiecutter-data-science-poetry-makefile
-
+    cookiecutter https://github.com/paulvstrashnov/cookiecutter_ml
 
 
 ### The resulting directory structure
@@ -42,57 +37,40 @@ The directory structure of your new project looks like this:
 ├── Makefile           <- Makefile with commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
 ├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
+│   ├── 01_raw         <- The original, immutable data dump.
+│   ├── 02_interim     <- Intermediate data that has been transformed.
+│   ├── 03_processed   <- The final, canonical data sets for modeling.
 │
-├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
+├── models             <- Trained and serialized models, model predictions, or model summaries.
 │
 ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
 │                         the creator's initials, and a short `-` delimited description, e.g.
 │                         `1.0-jqp-initial-data-exploration`.
 │
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
 ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
 │
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
+├── pyproject.toml     <- The file for reproducing the environment using [Poetry](https://python-poetry.org/)
 │
-├── {{ cookiecutter.source_name }}                <- Source code for use in this project.
+├── src                <- Source code for use in this project.
 │   ├── __init__.py    <- Makes {{ cookiecutter.source_name }} a Python module
 │   │
 │   ├── data           <- Scripts to download or generate data
-│   │   └── make_dataset.py
+│   │   └── __init__.py
 │   │
 │   ├── features       <- Scripts to turn raw data into features for modeling
-│   │   └── build_features.py
+│   │   └── __init__.py
 │   │
 │   ├── models         <- Scripts to train models and then use trained models to make
 │   │   │                 predictions
-│   │   ├── predict_model.py
-│   │   └── train_model.py
+│   │   ├── __init__.py
 │   │
 │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-│       └── visualize.py
+│       └── __init__.py
 │
+├── Dockerfile
+├── docker-compose.yml
+├── docker-compose.yml
+├── .pre-commit-config.yaml  <- Config file for [pre-commit](https://pre-commit.com/)
 └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+
 ```
-
-## Contributing
-
-We welcome contributions! [See the docs for guidelines](https://drivendata.github.io/cookiecutter-data-science/#contributing).
-
-### Installing development requirements
-------------
-
-    pip install -r requirements.txt
-
-### Running the tests
-------------
-
-    py.test tests
