@@ -1,54 +1,21 @@
 [tool.poetry]
-name = "{{ cookiecutter.project_name }}"
-version = "{{ cookiecutter.version}}"
-description = "{{ cookiecutter.description}}"
-authors = ["{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"]
+name = "integraph-1"
+version = "0.1.0"
+description = "A project for exploring GNNs"
+authors = ["Pavel Strashnov"]
 license = "MIT"
 
-
 [tool.poetry.dependencies]
-python = "^3.9"
-python-dotenv = "^0.20"
-pandas = "^1.4.2"
-
+python = "^3.10"
 
 [tool.poetry.dev-dependencies]
-black = "^22.3"
-wemake-python-styleguide = "^0.16" # flake8 on steroids
-#flake8 = "^4"
-flake8-docstrings = "^1.6"
-jupyterlab = "^3.3"
-isort = "^5.10"
-pytest = "^7.1"
-tqdm = "^4.64"
-
-[tool.isort]
-multi_line_output = 3
-include_trailing_comma = true
-src_paths = ["{{ cookiecutter.source_name }}", "tests"]
-
-[tool.black]
-line-length = 120
-target-version = ['py38']
-include = '\.pyi?$'
-exclude = '''
-(
-  /(
-      \.eggs         # exclude a few common directories in the
-    | \.git          # root of the project
-    | \.hg
-    | \.mypy_cache
-    | \.tox
-    | \.venv
-	| \.dvc
-	| data
-	| models
-	| notebooks
-	| reports
-  )/
-)
-'''
-
+black = "^22.3.0"
+wemake-python-styleguide = "^0.16.1"
+flake8-docstrings = "^1.6.0"
+jupyterlab = "^3.3.4"
+isort = "^5.10.1"
+pytest = "^7.1.2"
 
 [build-system]
-requires = ["poetry>=0.12"]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
