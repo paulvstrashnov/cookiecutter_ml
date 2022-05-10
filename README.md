@@ -5,27 +5,24 @@ _A logical, reasonably standardized, but flexible project structure for doing an
 Insipred by [cookiecutter-data-science-poetry-makefile](https://github.com/IngerMathilde/cookiecutter-data-science-poetry-makefile) and [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/)
 
 
-### Requirements to use the cookiecutter template:
+### How to use the cookiecutter template:
 -----------
- - Python 2.7 or 3.5
- - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip by or conda depending on how you manage your Python packages:
+ - Install conda/mamba 
+ - Use env.yml file to create an environment (change env name in the file)
 
 ``` bash
-$ pip install cookiecutter
+conda env create -f env.yml
 ```
-
-or
-
+ - Activate newly create environment:
+ 
 ``` bash
-$ conda install -c conda-forge cookiecutter
+conda activate ml
 ```
 
-
-### To start a new project, run:
-------------
-
-    cookiecutter https://github.com/paulvstrashnov/cookiecutter_ml
-
+- To start a new project, run:
+``` bash
+cookiecutter https://github.com/paulvstrashnov/cookiecutter_ml
+```
 
 ### The resulting directory structure
 ------------
