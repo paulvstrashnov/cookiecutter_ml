@@ -23,6 +23,22 @@ conda activate ml
 ``` bash
 cookiecutter https://github.com/paulvstrashnov/cookiecutter_ml
 ```
+- Next steps:
+```bash
+# Enter project directory
+cd <repo_name>
+
+# Initialize git repo
+git init
+
+# Install dependencies
+poetry install
+
+# Setup pre-commit and pre-push hooks
+poetry run pre-commit install -t pre-commit
+poetry run pre-commit install -t pre-push
+```
+
 
 ### The resulting directory structure
 ------------
